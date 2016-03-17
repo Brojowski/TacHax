@@ -6,12 +6,11 @@ public class Game
     private Iai ai1;
     private Iai ai2;
     private GUI gui;
-    private final boolean USE_GUI = false;
 
     public Game()
     {
         b = new Board();
-        if (USE_GUI)
+        if (XO.USE_GUI)
         {
             gui = new GUI(b.getXO());
         }
@@ -48,7 +47,7 @@ public class Game
         ai1.setMyChar(XO.X);
         ai2.setMyChar(XO.O);
 
-        for (int move = 0; move < 9; move++)
+        for (int move = 1; move <= 9; move++)
         {
             if (move % 2 != 0)
             {
@@ -60,7 +59,7 @@ public class Game
                 b.set(play.x, play.y, XO.O);
             }
 
-            if (USE_GUI)
+            if (XO.USE_GUI)
             {
                 gui.update();
             }
@@ -69,13 +68,13 @@ public class Game
             switch (w)
             {
                 case XO.X:
-                    if (USE_GUI)
+                    if (XO.USE_GUI)
                     {
                         gui.setVisible(false);
                     }
                     return 1;
                 case XO.O:
-                    if (USE_GUI)
+                    if (XO.USE_GUI)
                     {
                         gui.setVisible(false);
                     }
@@ -84,7 +83,7 @@ public class Game
                     break;
             }
         }
-        if (USE_GUI)
+        if (XO.USE_GUI)
         {
             gui.setVisible(false);
         }
