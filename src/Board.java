@@ -34,6 +34,11 @@ public class Board
             return xo[y][x];
     }
 
+    public char get(int pos)
+    {
+        return get(toCoordinateX(pos),toCoordinateY(pos));
+    }
+
     public char[][] getXO()
     {
         return xo;
@@ -42,6 +47,42 @@ public class Board
     private boolean valid(int x, int y)
     {
         return xo[y][x] == XO.BLANK;
+    }
+
+    private int toCoordinateX(int playValue)
+    {
+        int x = -1;
+        if ((playValue == 1) || (playValue == 4) || (playValue == 7))
+        {
+            x = 0;
+        }
+        else if ((playValue == 2) || (playValue == 5) || (playValue == 8))
+        {
+            x = 1;
+        }
+        else if ((playValue == 3) || (playValue == 6) || (playValue == 9))
+        {
+            x = 2;
+        }
+        return x;
+    }
+
+    private int toCoordinateY(int playValue)
+    {
+        int y = -1;
+        if ((playValue == 1) || (playValue == 2) || (playValue == 3))
+        {
+            y = 0;
+        }
+        else if ((playValue == 4) || (playValue == 5) || (playValue == 6))
+        {
+            y = 1;
+        }
+        else if ((playValue == 7) || (playValue == 8) || (playValue == 9))
+        {
+            y = 2;
+        }
+        return y;
     }
 
     public char winner()
