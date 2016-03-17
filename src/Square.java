@@ -12,7 +12,7 @@ public class Square extends JPanel
 
     public Square()
     {
-        value = ' ';
+        value = XO.BLANK;
     }
 
     public void setValue(char value)
