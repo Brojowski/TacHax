@@ -8,6 +8,7 @@ public class Square extends JPanel
     public Square()
     {
         value = XO.BLANK;
+        this.setMinimumSize(new Dimension(200,200));
     }
 
     public void setValue(char value)
@@ -32,16 +33,16 @@ public class Square extends JPanel
         Image img = createImage(200, 200); //600 is the width/ height of the board and 3 rows/ columns and 200 is 600/3
         Graphics offScreen = img.getGraphics();
 
-        offScreen.setFont(new Font("Courier", Font.BOLD, 50));
+        offScreen.setFont(new Font("Courier", Font.BOLD, 100));
         switch (value)
         {
             case XO.X:
                 offScreen.setColor(Color.BLUE);
-                offScreen.drawString("X", 0, 0);
+                offScreen.drawString("X", 50, 100);
                 break;
             case XO.O:
                 offScreen.setColor(Color.RED);
-                offScreen.drawString("O", 0, 0);
+                offScreen.drawString("O", 50, 100);
                 break;
             default:
                 break;

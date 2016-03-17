@@ -7,7 +7,7 @@ public class XO
     public static void main(String[] args)
     {
         int one = 0, two = 0, tie = 0, err=0;
-        for (int i = 0; i < 10000000; i++)
+        for (int i = 0; i < 10; i++)
         {
             Game game = new Game();
             game.setAi1(new TestAI(game.getBoard()));

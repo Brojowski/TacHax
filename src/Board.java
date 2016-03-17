@@ -34,6 +34,11 @@ public class Board
             return xo[y][x];
     }
 
+    public char[][] getXO()
+    {
+        return xo;
+    }
+
     private boolean valid(int x, int y)
     {
         return xo[y][x] == XO.BLANK;

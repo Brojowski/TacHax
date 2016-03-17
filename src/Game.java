@@ -5,10 +5,14 @@ public class Game
     private Board b;
     private Iai ai1;
     private Iai ai2;
+    private GUI gui;
+    private boolean shouldUpdate;
 
     public Game()
     {
         b = new Board();
+        gui = new GUI(b.getXO());
+        shouldUpdate = true;
     }
 
     public void setAi1(Iai ai1)
@@ -54,17 +58,25 @@ public class Game
                 b.set(play.x, play.y, XO.O);
             }
 
+            if(shouldUpdate)
+            {
+                gui.update();
+            }
+
             char w = b.winner();
             switch (w)
             {
                 case XO.X:
+                    gui.setVisible(false);
                     return 1;
                 case XO.O:
+                    gui.setVisible(false);
                     return 2;
                 default:
                     break;
             }
         }
+        gui.setVisible(false);
         return 0;
     }
 }

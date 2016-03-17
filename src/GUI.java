@@ -19,6 +19,7 @@ public class GUI extends JFrame
         {
             for(int x = 0;x<3;x++)
             {
+                board[y][x] = new Square();
                 board[y][x].setValue(pieces[y][x]);
                 this.add(board[y][x]);
             }
