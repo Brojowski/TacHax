@@ -22,7 +22,10 @@ public class Game
     }
 
     /**
-     * @return winner player (1 || 2 || 0 || -1)
+     * @return 1 || 2 || 0 || -1
+     *      1 || 2 : Player number
+     *      0 : Tie
+     *      -1 : Error
      */
     public int run()
     {
