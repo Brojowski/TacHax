@@ -42,7 +42,7 @@ public class Game
         ai1.setMyChar(XO.X);
         ai2.setMyChar(XO.O);
 
-        for (int move = 0; move < 9; move++)
+        for (int move = 1; move <= 9; move++)
         {
             if (move % 2 != 0)
             {
