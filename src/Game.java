@@ -11,11 +11,26 @@ public class Game
         b = new Board();
     }
 
+    public void setAi1(Iai ai1)
+    {
+        this.ai1 = ai1;
+    }
+
+    public void setAi2(Iai ai2)
+    {
+        this.ai2 = ai2;
+    }
+
     /**
-     * @return winner player (1 || 2 || 0)
+     * @return winner player (1 || 2 || 0 || -1)
      */
     public int run()
     {
+        if (ai1 == null || ai2 == null)
+        {
+            return -1;
+        }
+
         ai1.setMyChar(XO.X);
         ai2.setMyChar(XO.O);
 
