@@ -6,13 +6,15 @@ public class Game
     private Iai ai1;
     private Iai ai2;
     private GUI gui;
-    private boolean shouldUpdate;
+    private final boolean USE_GUI = false;
 
     public Game()
     {
         b = new Board();
-        gui = new GUI(b.getXO());
-        shouldUpdate = true;
+        if (USE_GUI)
+        {
+            gui = new GUI(b.getXO());
+        }
     }
 
     public void setAi1(Iai ai1)
@@ -32,9 +34,9 @@ public class Game
 
     /**
      * @return 1 || 2 || 0 || -1
-     *      1 || 2 : Player number
-     *      0 : Tie
-     *      -1 : Error
+     * 1 || 2 : Player number
+     * 0 : Tie
+     * -1 : Error
      */
     public int run()
     {
@@ -58,7 +60,7 @@ public class Game
                 b.set(play.x, play.y, XO.O);
             }
 
-            if(shouldUpdate)
+            if (USE_GUI)
             {
                 gui.update();
             }
@@ -67,16 +69,25 @@ public class Game
             switch (w)
             {
                 case XO.X:
-                    gui.setVisible(false);
+                    if (USE_GUI)
+                    {
+                        gui.setVisible(false);
+                    }
                     return 1;
                 case XO.O:
-                    gui.setVisible(false);
+                    if (USE_GUI)
+                    {
+                        gui.setVisible(false);
+                    }
                     return 2;
                 default:
                     break;
             }
         }
-        gui.setVisible(false);
+        if (USE_GUI)
+        {
+            gui.setVisible(false);
+        }
         return 0;
     }
 }
