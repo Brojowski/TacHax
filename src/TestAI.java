@@ -25,9 +25,9 @@ public class TestAI implements Iai
         {
             int x = gen.nextInt(3);
             int y = gen.nextInt(3);
-            if (board.get(x,y) == XO.BLANK)
+            if (board.get(x, y) == XO.BLANK)
             {
-                return new Point(x,y);
+                return new Point(x, y);
             }
         }
     }
