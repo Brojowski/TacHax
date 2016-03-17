@@ -1,9 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
 
-/**
- * Created by rossc on 3/16/2016.
- */
 public class GUI extends JFrame
 {
     private Square[][] board;

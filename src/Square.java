@@ -1,11 +1,6 @@
 import javax.swing.*;
 import java.awt.*;
-import java.awt.image.ImageObserver;
-import java.awt.image.ImageProducer;
 
-/**
- * Created by rossc on 3/16/2016.
- */
 public class Square extends JPanel
 {
     private char value;
