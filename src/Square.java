@@ -21,9 +21,20 @@ public class Square extends JPanel
         update(getGraphics());
     }
 
+    public char getValue()
+    {
+        return value;
+    }
+
+    public void update(char value)
+    {
+        this.value = value;
+        update(getGraphics());
+    }
+
     public void paintComponent(Graphics g)
     {
-        Image img = createImage(600 / 3, 600 / 3); //600 is the width/ height of the board and 3 rows/ columns
+        Image img = createImage(200, 200); //600 is the width/ height of the board and 3 rows/ columns and 200 is 600/3
         Graphics offScreen = img.getGraphics();
 
         offScreen.setFont(new Font("Courier", Font.BOLD, 50));
@@ -41,6 +52,6 @@ public class Square extends JPanel
                 break;
         }
 
-        g.drawImage(img,0,0,this);
+        g.drawImage(img, 0, 0, this);
     }
 }

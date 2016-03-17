@@ -7,20 +7,43 @@ import java.awt.*;
 public class GUI extends JFrame
 {
     private Square[][] board;
+    private char[][] pieces;
 
-    public GUI(Square[][] board)
+    public GUI(char[][] pieces)
     {
+        this.pieces = pieces;
+        board = new Square[3][3];
+
         initialize();
-        this.board = board;
 
         this.setLayout(new GridLayout(3,3));
 
-        for(int x = 0;x<3;x++)
+        for(int y = 0;y<3;y++)
         {
-            for(int y = 0;y<3;y++)
+            for(int x = 0;x<3;x++)
             {
-                this.add(board[x][y]);
+                board[y][x].setValue(pieces[y][x]);
+                this.add(board[y][x]);
             }
+        }
+    }
+
+    public void update()
+    {
+        for(int y = 0;y<3;y++)
+        {
+            for(int x = 0;x<3;x++)
+            {
+                board[y][x].update(pieces[y][x]);
+            }
+        }
+
+        try
+        {
+            Thread.sleep(1000);
+        } catch (InterruptedException ie)
+        {
+            ie.printStackTrace();
         }
     }
 
