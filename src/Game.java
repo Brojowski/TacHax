@@ -2,9 +2,9 @@ import java.awt.Point;
 
 public class Game
 {
-    Board b;
-    Iai ai1;
-    Iai ai2;
+    private Board b;
+    private Iai ai1;
+    private Iai ai2;
 
     public Game()
     {
@@ -19,6 +19,11 @@ public class Game
     public void setAi2(Iai ai2)
     {
         this.ai2 = ai2;
+    }
+
+    public Board getBoard()
+    {
+        return b;
     }
 
     /**
@@ -37,7 +42,7 @@ public class Game
         ai1.setMyChar(XO.X);
         ai2.setMyChar(XO.O);
 
-        for (int move = 0; move <= 9; move++)
+        for (int move = 0; move < 9; move++)
         {
             if (move % 2 != 0)
             {

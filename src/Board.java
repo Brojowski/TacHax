@@ -1,4 +1,3 @@
-import java.security.InvalidParameterException;
 
 public class Board
 {
@@ -6,11 +5,11 @@ public class Board
 
     public Board()
     {
-        for (char[] row : xo)
+        for (int y = 0; y < xo.length; y++)
         {
-            for (char col : row)
+            for (int x = 0; x < xo[y].length; x++)
             {
-                col = XO.BLANK;
+                xo[y][x] = XO.BLANK;
             }
         }
     }
@@ -32,11 +31,7 @@ public class Board
      */
     public char get(int x, int y)
     {
-        if (valid(x, y))
-        {
             return xo[y][x];
-        }
-        throw new InvalidParameterException("Out of bounds");
     }
 
     private boolean valid(int x, int y)
@@ -89,4 +84,18 @@ public class Board
         return false;
     }
 
+    @Override
+    public String toString()
+    {
+        String out = "";
+        for (char[] row : xo)
+        {
+            for (char col : row)
+            {
+                out += col + "\t";
+            }
+            out += "\n";
+        }
+        return out;
+    }
 }
