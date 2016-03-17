@@ -1,0 +1,15 @@
+.idea/compiler.xml
+.idea/copyright/profiles_settings.xml
+.idea/misc.xml
+.idea/modules.xml
+.idea/uiDesigner.xml
+.idea/vcs.xml
+.idea/workspace.xml
+TicTacToe.iml
+out/production/TicTacToe/Board.class
+out/production/TicTacToe/GUI.class
+out/production/TicTacToe/Game.class
+out/production/TicTacToe/Iai.class
+out/production/TicTacToe/Square.class
+out/production/TicTacToe/TestAI.class
+out/production/TicTacToe/XO.class
